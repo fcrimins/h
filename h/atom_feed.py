@@ -113,6 +113,9 @@ def _feed_entry_from_annotation(
         entry["links"].append({"rel": "alternate", "type": "application/json",
                                "href": annotation_api_url(annotation)})
 
+    entry["links"].append({"rel": "http://www.w3.org/ns/oa#hasTarget",
+                           "href": annotation.get('uri')})
+
     return entry
 
 
